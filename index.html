@@ -1,468 +1,848 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>نسيج الرياض | مفروشات فاخرة</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#C1272D',
-                        primaryLight: '#E6676B',
-                        primaryDark: '#8A1C21',
-                        secondary: '#F8F1E5',
-                        dark: '#2A2A2A',
-                        light: '#FFFFFF',
-                        gray: '#F5F5F5',
-                    },
-                    fontFamily: {
-                        sans: ['Tajawal', 'sans-serif'],
-                    },
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#C1272D",
+              primaryLight: "#E6676B",
+              primaryDark: "#8A1C21",
+              secondary: "#F8F1E5",
+              dark: "#2A2A2A",
+              light: "#FFFFFF",
+              gray: "#F5F5F5",
+            },
+            fontFamily: {
+              sans: ["Tajawal", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
     <style type="text/tailwindcss">
-        @layer utilities {
-            .animation-delay-200 {
-                animation-delay: 0.2s;
-            }
-            .animation-delay-400 {
-                animation-delay: 0.4s;
-            }
-            .animation-delay-600 {
-                animation-delay: 0.6s;
-            }
+      @layer utilities {
+        .animation-delay-200 {
+          animation-delay: 0.2s;
         }
+        .animation-delay-400 {
+          animation-delay: 0.4s;
+        }
+        .animation-delay-600 {
+          animation-delay: 0.6s;
+        }
+      }
     </style>
-</head>
-<body class="font-sans text-dark bg-light">
+  </head>
+  <body class="font-sans text-dark bg-light">
     <!-- الشريط العلوي -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center">
-                <img src="./logopng.png" alt="نسيج الرياض" class="h-10 scale-125 transition-transform" style={{scale:200%}}>
-            </a>
-            
-            <nav class="hidden md:block">
-                <ul class="flex space-x-6 space-x-reverse">
-                    <li><a href="#home" class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">الرئيسية</a></li>
-                    <li><a href="#about" class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">من نحن</a></li>
-                    <li><a href="#services" class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">خدماتنا</a></li>
-                    <li><a href="#gallery" class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">معرض الصور</a></li>
-                    <li><a href="#testimonials" class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">آراء العملاء</a></li>
-                    <li><a href="#contact" class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">تواصل معنا</a></li>
-                </ul>
-            </nav>
-            
-            <button id="mobile-menu-btn" class="md:hidden text-primary text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        
-        <!-- قائمة الجوال -->
-        <div id="mobile-menu" class="hidden md:hidden fixed top-20 right-0 w-4/5 h-[calc(100vh-80px)] bg-white shadow-lg transition-all duration-300">
-            <ul class="flex flex-col space-y-4 p-6">
-                <li><a href="#home" class="block py-2 text-dark hover:text-primary font-medium">الرئيسية</a></li>
-                <li><a href="#about" class="block py-2 text-dark hover:text-primary font-medium">من نحن</a></li>
-                <li><a href="#services" class="block py-2 text-dark hover:text-primary font-medium">خدماتنا</a></li>
-                <li><a href="#gallery" class="block py-2 text-dark hover:text-primary font-medium">معرض الصور</a></li>
-                <li><a href="#testimonials" class="block py-2 text-dark hover:text-primary font-medium">آراء العملاء</a></li>
-                <li><a href="#contact" class="block py-2 text-dark hover:text-primary font-medium">تواصل معنا</a></li>
-            </ul>
-        </div>
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="flex items-center">
+          <img
+            src="./logopng.png"
+            alt="نسيج الرياض"
+            class="h-10 mr-5 scale-125 transition-transform"
+            style="transform: scale(2.1)"
+          />
+        </a>
+
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6 space-x-reverse">
+            <li>
+              <a
+                href="#home"
+                class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
+                >الرئيسية</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
+                >من نحن</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
+                >خدماتنا</a
+              >
+            </li>
+            <li>
+              <a
+                href="#gallery"
+                class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
+                >معرض الصور</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimonials"
+                class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
+                >آراء العملاء</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="text-dark hover:text-primary font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
+                >تواصل معنا</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button id="mobile-menu-btn" class="md:hidden text-primary text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- قائمة الجوال -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden fixed top-20 right-0 w-4/5 h-[calc(100vh-80px)] bg-white shadow-lg transition-all duration-300"
+      >
+        <ul class="flex flex-col space-y-4 p-6">
+          <li>
+            <a
+              href="#home"
+              class="block py-2 text-dark hover:text-primary font-medium"
+              >الرئيسية</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="block py-2 text-dark hover:text-primary font-medium"
+              >من نحن</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="block py-2 text-dark hover:text-primary font-medium"
+              >خدماتنا</a
+            >
+          </li>
+          <li>
+            <a
+              href="#gallery"
+              class="block py-2 text-dark hover:text-primary font-medium"
+              >معرض الصور</a
+            >
+          </li>
+          <li>
+            <a
+              href="#testimonials"
+              class="block py-2 text-dark hover:text-primary font-medium"
+              >آراء العملاء</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block py-2 text-dark hover:text-primary font-medium"
+              >تواصل معنا</a
+            >
+          </li>
+        </ul>
+      </div>
     </header>
 
     <!-- قسم الهيرو -->
-    <section id="home" class="hero h-screen min-h-[700px] bg-gradient-to-r from-black/50 to-black/50 bg-cover bg-center flex items-center relative" style="background-image: url('https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fadeInUp">نسيج الرياض لمفروشات المنزل الفاخرة</h1>
-            <p class="text-xl md:text-2xl text-white mb-8 opacity-0 animate-fadeInUp animation-delay-200">نقدم لكم تشكيلة مميزة من المفروشات التي تجمع بين الأناقة والجودة العالية لتجعل منزلك تحفة فنية</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fadeInUp animation-delay-400">
-                <a href="#services" class="bg-primary hover:bg-transparent border-2 border-primary text-white hover:text-primary py-3 px-8 rounded-full font-medium transition-colors duration-300">استكشف منتجاتنا</a>
-                <a href="#contact" class="bg-transparent hover:bg-primary border-2 border-primary text-primary hover:text-white py-3 px-8 rounded-full font-medium transition-colors duration-300">تواصل معنا</a>
-            </div>
+    <section
+      id="home"
+      class="hero h-screen min-h-[700px] bg-gradient-to-r from-black/50 to-black/50 bg-cover bg-center flex items-center relative"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      "
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fadeInUp"
+        >
+          نسيج الرياض لمفروشات المنزل الفاخرة
+        </h1>
+        <p
+          class="text-xl md:text-2xl text-white mb-8 opacity-0 animate-fadeInUp animation-delay-200"
+        >
+          نقدم لكم تشكيلة مميزة من المفروشات التي تجمع بين الأناقة والجودة
+          العالية لتجعل منزلك تحفة فنية
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fadeInUp animation-delay-400"
+        >
+          <a
+            href="#services"
+            class="bg-primary hover:bg-transparent border-2 border-primary text-white hover:text-primary py-3 px-8 rounded-full font-medium transition-colors duration-300"
+            >استكشف منتجاتنا</a
+          >
+          <a
+            href="#contact"
+            class="bg-transparent hover:bg-primary border-2 border-primary text-primary hover:text-white py-3 px-8 rounded-full font-medium transition-colors duration-300"
+            >تواصل معنا</a
+          >
         </div>
-        
-        <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-2xl animate-bounce">
-            <i class="fas fa-chevron-down"></i>
-        </a>
+      </div>
+
+      <a
+        href="#about"
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-2xl animate-bounce"
+      >
+        <i class="fas fa-chevron-down"></i>
+      </a>
     </section>
 
     <!-- قسم من نحن -->
     <section id="about" class="py-20 bg-secondary">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full">من نحن</h2>
-            
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-                <div class="lg:w-1/2">
-                    <p class="text-lg mb-6"><strong class="font-bold">نسيج الرياض</strong> هو وجهتكم المفضلة للمفروشات الفاخرة في العاصمة، حيث نقدم منذ عام 2010 تشكيلة مميزة من المنتجات التي تجمع بين الجودة العالية والتصميم العصري.</p>
-                    
-                    <h3 class="text-xl font-bold text-primary mb-3">رؤيتنا</h3>
-                    <p class="mb-8">أن نكون الخيار الأول لكل من يبحث عن الجودة والأناقة في عالم المفروشات، وأن نساهم في صنع بيوت جميلة تليق بأذواق عملائنا الكرام.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center ml-4 flex-shrink-0">
-                                <i class="fas fa-star text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold mb-1">تصاميم حصرية</h4>
-                                <p>تصاميم تناسب الأذواق العربية وتواكب أحدث صيحات الموضة</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center ml-4 flex-shrink-0">
-                                <i class="fas fa-leaf text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold mb-1">مواد صديقة للبيئة</h4>
-                                <p>نستخدم مواد عالية الجودة وآمنة على صحتك وصحة عائلتك</p>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full"
+        >
+          من نحن
+        </h2>
+
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="lg:w-1/2">
+            <p class="text-lg mb-6">
+              <strong class="font-bold">نسيج الرياض</strong> هو وجهتكم المفضلة
+              للمفروشات الفاخرة في العاصمة، حيث نقدم منذ عام 2010 تشكيلة مميزة
+              من المنتجات التي تجمع بين الجودة العالية والتصميم العصري.
+            </p>
+
+            <h3 class="text-xl font-bold text-primary mb-3">رؤيتنا</h3>
+            <p class="mb-8">
+              أن نكون الخيار الأول لكل من يبحث عن الجودة والأناقة في عالم
+              المفروشات، وأن نساهم في صنع بيوت جميلة تليق بأذواق عملائنا الكرام.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center ml-4 flex-shrink-0"
+                >
+                  <i class="fas fa-star text-lg"></i>
                 </div>
-                
-                <div class="lg:w-1/2 rounded-xl overflow-hidden shadow-xl transition-transform duration-500 hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="عن نسيج الرياض" class="w-full h-auto object-cover">
+                <div>
+                  <h4 class="font-bold mb-1">تصاميم حصرية</h4>
+                  <p>تصاميم تناسب الأذواق العربية وتواكب أحدث صيحات الموضة</p>
                 </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center ml-4 flex-shrink-0"
+                >
+                  <i class="fas fa-leaf text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">مواد صديقة للبيئة</h4>
+                  <p>نستخدم مواد عالية الجودة وآمنة على صحتك وصحة عائلتك</p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div
+            class="lg:w-1/2 rounded-xl overflow-hidden shadow-xl transition-transform duration-500 hover:scale-105"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
+              alt="عن نسيج الرياض"
+              class="w-full h-auto object-cover"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- قسم الخدمات -->
     <section id="services" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full">خدماتنا</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- بطاقة خدمة 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
-                    <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="غرف نوم" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-3">غرف النوم</h3>
-                        <p class="mb-4">مجموعة مميزة من أحدث تصاميم غرف النوم بأسرة فاخرة وخزانات أنيقة تناسب جميع الأذواق</p>
-                        <a href="#" class="inline-block bg-primary hover:bg-primaryDark text-white py-2 px-5 rounded-full text-sm font-medium transition-colors duration-300">استكشف المزيد</a>
-                    </div>
-                </div>
-                
-                <!-- بطاقة خدمة 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
-                    <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="كنب" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-3">الكنب والمجالس</h3>
-                        <p class="mb-4">تشكيلة واسعة من الكنب الحديثة والمجالس العربية الأصيلة بأجود أنواع الأقمشة</p>
-                        <a href="#" class="inline-block bg-primary hover:bg-primaryDark text-white py-2 px-5 rounded-full text-sm font-medium transition-colors duration-300">استكشف المزيد</a>
-                    </div>
-                </div>
-                
-                <!-- بطاقة خدمة 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
-                    <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1075&q=80" alt="ستائر" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-3">الستائر والديكور</h3>
-                        <p class="mb-4">أجمل تشكيلات الستائر والإكسسوارات المنزلية التي تضفي لمسة جمالية على منزلك</p>
-                        <a href="#" class="inline-block bg-primary hover:bg-primaryDark text-white py-2 px-5 rounded-full text-sm font-medium transition-colors duration-300">استكشف المزيد</a>
-                    </div>
-                </div>
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full"
+        >
+          خدماتنا
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- بطاقة خدمة 1 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80"
+                alt="غرف نوم"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
             </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-primary mb-3">غرف النوم</h3>
+              <p class="mb-4">
+                مجموعة مميزة من أحدث تصاميم غرف النوم بأسرة فاخرة وخزانات أنيقة
+                تناسب جميع الأذواق
+              </p>
+              <a
+                href="#"
+                class="inline-block bg-primary hover:bg-primaryDark text-white py-2 px-5 rounded-full text-sm font-medium transition-colors duration-300"
+                >استكشف المزيد</a
+              >
+            </div>
+          </div>
+
+          <!-- بطاقة خدمة 2 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="كنب"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-primary mb-3">
+                الكنب والمجالس
+              </h3>
+              <p class="mb-4">
+                تشكيلة واسعة من الكنب الحديثة والمجالس العربية الأصيلة بأجود
+                أنواع الأقمشة
+              </p>
+              <a
+                href="#"
+                class="inline-block bg-primary hover:bg-primaryDark text-white py-2 px-5 rounded-full text-sm font-medium transition-colors duration-300"
+                >استكشف المزيد</a
+              >
+            </div>
+          </div>
+
+          <!-- بطاقة خدمة 3 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1075&q=80"
+                alt="ستائر"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-primary mb-3">
+                الستائر والديكور
+              </h3>
+              <p class="mb-4">
+                أجمل تشكيلات الستائر والإكسسوارات المنزلية التي تضفي لمسة جمالية
+                على منزلك
+              </p>
+              <a
+                href="#"
+                class="inline-block bg-primary hover:bg-primaryDark text-white py-2 px-5 rounded-full text-sm font-medium transition-colors duration-300"
+                >استكشف المزيد</a
+              >
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- معرض الصور -->
     <section id="gallery" class="py-20 bg-secondary">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full">معرض أعمالنا</h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                <!-- صورة 1 -->
-                <div class="relative rounded-xl overflow-hidden h-72 group">
-                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="تصميم داخلي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- صورة 2 -->
-                <div class="relative rounded-xl overflow-hidden h-72 group">
-                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="تصميم داخلي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- صورة 3 -->
-                <div class="relative rounded-xl overflow-hidden h-72 group">
-                    <img src="https://images.unsplash.com/photo-1600566752225-220fb5aaa5b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="تصميم داخلي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- صورة 4 -->
-                <div class="relative rounded-xl overflow-hidden h-72 group">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="تصميم داخلي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full"
+        >
+          معرض أعمالنا
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- صورة 1 -->
+          <div class="relative rounded-xl overflow-hidden h-72 group">
+            <img
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80"
+              alt="تصميم داخلي"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fas fa-search-plus text-white text-3xl"></i>
             </div>
+          </div>
+
+          <!-- صورة 2 -->
+          <div class="relative rounded-xl overflow-hidden h-72 group">
+            <img
+              src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+              alt="تصميم داخلي"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fas fa-search-plus text-white text-3xl"></i>
+            </div>
+          </div>
+
+          <!-- صورة 3 -->
+          <div class="relative rounded-xl overflow-hidden h-72 group">
+            <img
+              src="https://images.unsplash.com/photo-1600566752225-220fb5aaa5b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="تصميم داخلي"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fas fa-search-plus text-white text-3xl"></i>
+            </div>
+          </div>
+
+          <!-- صورة 4 -->
+          <div class="relative rounded-xl overflow-hidden h-72 group">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="تصميم داخلي"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fas fa-search-plus text-white text-3xl"></i>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- آراء العملاء -->
     <section id="testimonials" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full">آراء عملائنا</h2>
-            
-            <div class="max-w-4xl mx-auto">
-                <!-- رأي 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-primary ml-5">
-                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="عميلة" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">أمل أحمد</h4>
-                            <p class="text-gray-600">ربة منزل</p>
-                        </div>
-                    </div>
-                    <div class="text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-lg italic">"تجربة رائعة مع نسيج الرياض، المنتجات بجودة عالية والخدمة ممتازة. فريق العمل محترف جداً وساعدوني في اختيار الألوان والتصاميم التي تناسب منزلي. أنصح الجميع بهم!"</p>
-                </div>
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full"
+        >
+          آراء عملائنا
+        </h2>
+
+        <div class="max-w-4xl mx-auto">
+          <!-- رأي 1 -->
+          <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+            <div class="flex items-center justify-center mb-6">
+              <div
+                class="w-20 h-20 rounded-full overflow-hidden border-4 border-primary ml-5"
+              >
+                <img
+                  src="https://randomuser.me/api/portraits/women/43.jpg"
+                  alt="عميلة"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">أمل أحمد</h4>
+                <p class="text-gray-600">ربة منزل</p>
+              </div>
             </div>
+            <div class="text-yellow-400 mb-4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-lg italic">
+              "تجربة رائعة مع نسيج الرياض، المنتجات بجودة عالية والخدمة ممتازة.
+              فريق العمل محترف جداً وساعدوني في اختيار الألوان والتصاميم التي
+              تناسب منزلي. أنصح الجميع بهم!"
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- قسم التواصل -->
     <section id="contact" class="py-20 bg-secondary">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full">تواصل معنا</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- معلومات الاتصال -->
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold text-primary mb-6">معلومات الاتصال</h3>
-                    
-                    <div class="space-y-5">
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center ml-4 flex-shrink-0">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <p>الرياض، حي السليمانية، شارع الملك فهد</p>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center ml-4 flex-shrink-0">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <p>0552260912</p>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center ml-4 flex-shrink-0">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <p>0552260912</p>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center ml-4 flex-shrink-0">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <p>info@naseej-riyadh.com</p>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold text-primary mt-8 mb-4">وسائل التواصل الاجتماعي</h3>
-                    <div class="flex gap-3">
-                        <a href="#" class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-12 relative inline-block after:content-[''] after:absolute after:-bottom-3 after:right-0 after:w-16 after:h-1 after:bg-primary after:rounded-full"
+        >
+          تواصل معنا
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- معلومات الاتصال -->
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <h3 class="text-xl font-bold text-primary mb-6">معلومات الاتصال</h3>
+
+            <div class="space-y-5">
+              <div class="flex items-start">
+                <div
+                  class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center ml-4 flex-shrink-0"
+                >
+                  <i class="fas fa-map-marker-alt"></i>
                 </div>
-                
-                <!-- نموذج التواصل -->
-                <div class="bg-white p-8 rounded-xl shadow-md lg:col-span-2">
-                    <h3 class="text-xl font-bold text-primary mb-6">أرسل رسالة</h3>
-                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="md:col-span-2">
-                            <input type="text" placeholder="اسمك الكريم" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-                        </div>
-                        <div>
-                            <input type="email" placeholder="بريدك الإلكتروني" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-                        </div>
-                        <div>
-                            <input type="tel" placeholder="رقم هاتفك" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                        <div class="md:col-span-2">
-                            <textarea placeholder="رسالتك" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-40" required></textarea>
-                        </div>
-                        <div class="md:col-span-2">
-                            <button type="submit" class="w-full bg-primary hover:bg-primaryDark text-white py-3 px-6 rounded-full font-medium transition-colors duration-300">إرسال الرسالة</button>
-                        </div>
-                    </form>
+                <p>الرياض، حي السليمانية، شارع الملك فهد</p>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center ml-4 flex-shrink-0"
+                >
+                  <i class="fas fa-phone"></i>
                 </div>
+                <p>0552260912</p>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center ml-4 flex-shrink-0"
+                >
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <p>0552260912</p>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center ml-4 flex-shrink-0"
+                >
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <p>info@naseej-riyadh.com</p>
+              </div>
             </div>
-            
-            <!-- الخريطة -->
-            <div class="mt-12 rounded-xl overflow-hidden shadow-xl h-96">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.735881798176!2d46.67278231500072!3d24.81357098407585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee3e9b4f8e2cd%3A0x8a7a5a9b0d0b5b1e!2z2KfZhNmF2LnZhdiv2Kkg2KfZhNij2YrYqNin2YQ!5e0!3m2!1sar!2ssa!4v1620000000000!5m2!1sar!2ssa" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <h3 class="text-xl font-bold text-primary mt-8 mb-4">
+              وسائل التواصل الاجتماعي
+            </h3>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
             </div>
+          </div>
+
+          <!-- نموذج التواصل -->
+          <div class="bg-white p-8 rounded-xl shadow-md lg:col-span-2">
+            <h3 class="text-xl font-bold text-primary mb-6">أرسل رسالة</h3>
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="md:col-span-2">
+                <input
+                  type="text"
+                  placeholder="اسمك الكريم"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="بريدك الإلكتروني"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="رقم هاتفك"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <textarea
+                  placeholder="رسالتك"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-40"
+                  required
+                ></textarea>
+              </div>
+              <div class="md:col-span-2">
+                <button
+                  type="submit"
+                  class="w-full bg-primary hover:bg-primaryDark text-white py-3 px-6 rounded-full font-medium transition-colors duration-300"
+                >
+                  إرسال الرسالة
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+
+        <!-- الخريطة -->
+        <div class="mt-12 rounded-xl overflow-hidden shadow-xl h-96">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.735881798176!2d46.67278231500072!3d24.81357098407585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee3e9b4f8e2cd%3A0x8a7a5a9b0d0b5b1e!2z2KfZhNmF2LnZhdiv2Kkg2KfZhNij2YrYqNin2YQ!5e0!3m2!1sar!2ssa!4v1620000000000!5m2!1sar!2ssa"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
     </section>
 
     <!-- الفوتر -->
     <footer class="bg-dark text-white pt-16 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <!-- عن الشركة -->
-                <div>
-                    <img src="./logo2.jpeg" alt="نسيج الرياض" class="h-20 mb-4">
-                    <p class="mb-4">نسيج الرياض هو وجهتكم المفضلة للمفروشات الفاخرة في العاصمة، حيث نقدم تشكيلة مميزة من المنتجات التي تجمع بين الجودة العالية والتصميم العصري.</p>
-                    <div class="flex gap-3">
-                        <a href="#" class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- روابط سريعة -->
-                <div>
-                    <h3 class="text-xl font-bold text-primary mb-4">روابط سريعة</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="hover:text-primary transition-colors duration-300">الرئيسية</a></li>
-                        <li><a href="#about" class="hover:text-primary transition-colors duration-300">من نحن</a></li>
-                        <li><a href="#services" class="hover:text-primary transition-colors duration-300">خدماتنا</a></li>
-                        <li><a href="#gallery" class="hover:text-primary transition-colors duration-300">معرض الصور</a></li>
-                        <li><a href="#testimonials" class="hover:text-primary transition-colors duration-300">آراء العملاء</a></li>
-                        <li><a href="#contact" class="hover:text-primary transition-colors duration-300">تواصل معنا</a></li>
-                    </ul>
-                </div>
-                
-                <!-- خدماتنا -->
-                <div>
-                    <h3 class="text-xl font-bold text-primary mb-4">خدماتنا</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-primary transition-colors duration-300">غرف النوم</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors duration-300">الكنب والمجالس</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors duration-300">الستائر والديكور</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors duration-300">السجاد والموكيت</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors duration-300">الإكسسوارات المنزلية</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors duration-300">التصميم الداخلي</a></li>
-                    </ul>
-                </div>
-                
-                <!-- معلومات الاتصال -->
-                <div>
-                    <h3 class="text-xl font-bold text-primary mb-4">اتصل بنا</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-primary mt-1 ml-2"></i>
-                            <p>الرياض، حي السليمانية</p>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-phone text-primary mt-1 ml-2"></i>
-                            <p>0112345678</p>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-primary mt-1 ml-2"></i>
-                            <p>info@naseej-riyadh.com</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- عن الشركة -->
+          <div>
+            <img
+              src="./logopng.png"
+              alt="نسيج الرياض"
+              class="h-10 mb-4 mr-6 scale-125 transition-transform invert "
+              style="transform: scale(2.5) "
+            />
+
+            <p class="mb-4">
+              نسيج الرياض هو وجهتكم المفضلة للمفروشات الفاخرة في العاصمة، حيث
+              نقدم تشكيلة مميزة من المنتجات التي تجمع بين الجودة العالية
+              والتصميم العصري.
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-primary hover:bg-primaryDark text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
             </div>
-            
-            <!-- حقوق النشر -->
-            <div class="pt-6 border-t border-gray-700 text-center">
-                <p>&copy; 2023 نسيج الرياض. جميع الحقوق محفوظة.</p>
+          </div>
+
+          <!-- روابط سريعة -->
+          <div>
+            <h3 class="text-xl font-bold text-primary mb-4">روابط سريعة</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="hover:text-primary transition-colors duration-300"
+                  >الرئيسية</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="hover:text-primary transition-colors duration-300"
+                  >من نحن</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="hover:text-primary transition-colors duration-300"
+                  >خدماتنا</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#gallery"
+                  class="hover:text-primary transition-colors duration-300"
+                  >معرض الصور</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="hover:text-primary transition-colors duration-300"
+                  >آراء العملاء</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="hover:text-primary transition-colors duration-300"
+                  >تواصل معنا</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- خدماتنا -->
+          <div>
+            <h3 class="text-xl font-bold text-primary mb-4">خدماتنا</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary transition-colors duration-300"
+                  >غرف النوم</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary transition-colors duration-300"
+                  >الكنب والمجالس</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary transition-colors duration-300"
+                  >الستائر والديكور</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary transition-colors duration-300"
+                  >السجاد والموكيت</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary transition-colors duration-300"
+                  >الإكسسوارات المنزلية</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-primary transition-colors duration-300"
+                  >التصميم الداخلي</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- معلومات الاتصال -->
+          <div>
+            <h3 class="text-xl font-bold text-primary mb-4">اتصل بنا</h3>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <i class="fas fa-map-marker-alt text-primary mt-1 ml-2"></i>
+                <p>الرياض، حي السليمانية</p>
+              </div>
+              <div class="flex items-start">
+                <i class="fas fa-phone text-primary mt-1 ml-2"></i>
+                <p>0112345678</p>
+              </div>
+              <div class="flex items-start">
+                <i class="fas fa-envelope text-primary mt-1 ml-2"></i>
+                <p>info@naseej-riyadh.com</p>
+              </div>
             </div>
+          </div>
         </div>
+
+        <!-- حقوق النشر -->
+        <div class="pt-6 border-t border-gray-700 text-center">
+          <p>&copy; 2023 نسيج الرياض. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // شريط التنقل الثابت
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('shadow-lg', 'py-2');
-            } else {
-                header.classList.remove('shadow-lg', 'py-2');
-            }
+      // شريط التنقل الثابت
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("header");
+        if (window.scrollY > 100) {
+          header.classList.add("shadow-lg", "py-2");
+        } else {
+          header.classList.remove("shadow-lg", "py-2");
+        }
+      });
+
+      // قائمة الجوال
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenuBtn.innerHTML = mobileMenu.classList.contains("hidden")
+          ? '<i class="fas fa-bars"></i>'
+          : '<i class="fas fa-times"></i>';
+      });
+
+      // إغلاق القائمة عند النقر على رابط
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.add("hidden");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         });
-        
-        // قائمة الجوال
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenuBtn.innerHTML = mobileMenu.classList.contains('hidden') ? 
-                '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+      });
+
+      // تأثيرات التمرير
+      const animateOnScroll = function () {
+        const elements = document.querySelectorAll("section");
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementPosition < windowHeight - 100) {
+            element.classList.add("opacity-100", "translate-y-0");
+          }
         });
-        
-        // إغلاق القائمة عند النقر على رابط
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // تأثيرات التمرير
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('section');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    element.classList.add('opacity-100', 'translate-y-0');
-                }
-            });
-        };
-        
-        // تهيئة تأثيرات القسم
-        document.querySelectorAll('section').forEach(section => {
-            if (!section.classList.contains('hero')) {
-                section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-500', 'ease-out');
-            }
-        });
-        
-        // تشغيل تأثيرات عند التحميل والتمرير
-        window.addEventListener('load', animateOnScroll);
-        window.addEventListener('scroll', animateOnScroll);
+      };
+
+      // تهيئة تأثيرات القسم
+      document.querySelectorAll("section").forEach((section) => {
+        if (!section.classList.contains("hero")) {
+          section.classList.add(
+            "opacity-0",
+            "translate-y-10",
+            "transition-all",
+            "duration-500",
+            "ease-out"
+          );
+        }
+      });
+
+      // تشغيل تأثيرات عند التحميل والتمرير
+      window.addEventListener("load", animateOnScroll);
+      window.addEventListener("scroll", animateOnScroll);
     </script>
-</body>
+  </body>
 </html>
