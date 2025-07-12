@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["images.unsplash.com", "as1.ftcdn.net", "images.pexels.com","randomuser.me" ],
-  },
-  experimental: {
-    appDir: true,
+    remotePatterns: [
+      { hostname: "images.unsplash.com" },
+      { hostname: "as1.ftcdn.net" },
+      { hostname: "images.pexels.com" },
+      { hostname: "randomuser.me" },
+    ],
   },
 };
 
