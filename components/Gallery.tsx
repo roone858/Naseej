@@ -19,7 +19,7 @@ export default function Gallery() {
           {images.map((image, index) => (
             <div key={index} className="relative rounded-xl overflow-hidden h-72 group">
               <Image
-                src={image.src}
+                src={"/1.jfif"}
                 alt={image.alt}
                 width={300}
                 height={288}
