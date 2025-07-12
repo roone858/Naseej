@@ -1,29 +1,29 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function Footer() {
   const quickLinks = [
-    { href: '#home', label: 'الرئيسية' },
-    { href: '#about', label: 'من نحن' },
-    { href: '#products', label: 'منتجاتنا' },
-    { href: '#gallery', label: 'معرض الصور' },
-    { href: '#testimonials', label: 'آراء العملاء' },
-    { href: '#contact', label: 'تواصل معنا' }
-  ]
+    { href: "#home", label: "الرئيسية" },
+    { href: "#about", label: "من نحن" },
+    { href: "#products", label: "منتجاتنا" },
+    { href: "#gallery", label: "معرض الصور" },
+    { href: "#testimonials", label: "آراء العملاء" },
+    { href: "#contact", label: "تواصل معنا" },
+  ];
 
   const products = [
-    { href: '/mattress', label: 'مراتب سرير' },
-    { href: '/kanap', label: 'أطقم كنب' },
-    { href: '/pillows', label: 'وسائد ومراتب إضافية' },
-    { href: '/bedrooms', label: 'مفروشات غرف النوم' },
-    { href: '/accessories', label: 'إكسسوارات النوم' },
-    { href: '/deals', label: 'عروض خاصة' }
-  ]
+    { href: "/mattress", label: "مراتب سرير" },
+    { href: "/kanap", label: "أطقم كنب" },
+    { href: "/pillows", label: "وسائد ومراتب إضافية" },
+    { href: "/bedrooms", label: "مفروشات غرف النوم" },
+    { href: "/accessories", label: "إكسسوارات النوم" },
+    { href: "/deals", label: "عروض خاصة" },
+  ];
 
   const socialLinks = [
-    { icon: 'fab fa-whatsapp', href: 'https://wa.me/966552260912' },
-    { icon: 'fab fa-instagram', href: '#' },
-    { icon: 'fab fa-twitter', href: '#' }
-  ]
+    { icon: "fab fa-whatsapp", href: "https://wa.me/966552260912" },
+    { icon: "fab fa-instagram", href: "#" },
+    { icon: "fab fa-twitter", href: "#" },
+  ];
 
   return (
     <footer className="bg-dark text-white pt-16 pb-8">
@@ -34,9 +34,8 @@ export default function Footer() {
             <Image
               src="/logopng.png"
               alt="متجر الرياض"
-                width={100}
-            height={100}
-            
+              width={100}
+              height={100}
               className=" mb-2 mr-2 scale-125 transition-transform invert"
               // style={{ transform: 'scale(2.5)' }}
             />
@@ -99,11 +98,11 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start">
                 <i className="fas fa-map-marker-alt text-primary mt-1 ml-2"></i>
-                <p>الرياض، حي السليمانية</p>
+                <p>الرياض، شارع الزموري</p>
               </div>
               <div className="flex items-start">
                 <i className="fas fa-phone text-primary mt-1 ml-2"></i>
-                <p>0112345678</p>
+                <p>0552260912</p>
               </div>
               <div className="flex items-start">
                 <i className="fas fa-envelope text-primary mt-1 ml-2"></i>
@@ -119,5 +118,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
-} 
+  );
+}
