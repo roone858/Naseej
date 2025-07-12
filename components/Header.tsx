@@ -36,11 +36,13 @@ export default function Header() {
           <Image
             src="/logopng.png"
             alt="متجر الرياض"
-            width={100}
-            height={100}
+               width={40}
+            height={40}
+
             
-            className="mr-5 h-10 w-10 "
-            style={{ transform: 'scale(1.9)' }}
+            
+            className="mr-5 "
+            style={{ transform: 'scale(1.6)' }}
           />
         </a>
 
@@ -69,7 +71,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-20 right-0 w-4/5 h-[calc(100vh-80px)] bg-white/95 shadow-lg transition-all duration-300 ${
+        className={`md:hidden fixed top-16 right-0 w-4/5 h-[calc(100vh-80px)] bg-white/95 shadow-lg transition-all duration-300 ${
           isMobileMenuOpen ? 'block' : 'hidden'
         }`}
       >

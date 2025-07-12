@@ -11,16 +11,16 @@ export default function Footer() {
   ]
 
   const products = [
-    { href: '#', label: 'مراتب سرير' },
-    { href: '#', label: 'أطقم كنب' },
-    { href: '#', label: 'وسائد ومراتب إضافية' },
-    { href: '#', label: 'مفروشات غرف النوم' },
-    { href: '#', label: 'إكسسوارات النوم' },
-    { href: '#', label: 'عروض خاصة' }
+    { href: '/mattress', label: 'مراتب سرير' },
+    { href: '/kanap', label: 'أطقم كنب' },
+    { href: '/pillows', label: 'وسائد ومراتب إضافية' },
+    { href: '/bedrooms', label: 'مفروشات غرف النوم' },
+    { href: '/accessories', label: 'إكسسوارات النوم' },
+    { href: '/deals', label: 'عروض خاصة' }
   ]
 
   const socialLinks = [
-    { icon: 'fab fa-whatsapp', href: '#' },
+    { icon: 'fab fa-whatsapp', href: 'https://wa.me/966552260912' },
     { icon: 'fab fa-instagram', href: '#' },
     { icon: 'fab fa-twitter', href: '#' }
   ]
@@ -34,11 +34,11 @@ export default function Footer() {
             <Image
               src="/logopng.png"
               alt="متجر الرياض"
-                width={60}
-            height={60}
+                width={100}
+            height={100}
             
-              className="h-10 w-10 mb-4 mr-6 scale-125 transition-transform invert"
-              style={{ transform: 'scale(2.5)' }}
+              className=" mb-2 mr-2 scale-125 transition-transform invert"
+              // style={{ transform: 'scale(2.5)' }}
             />
 
             <p className="mb-4">
