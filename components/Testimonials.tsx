@@ -23,14 +23,8 @@ export default function Testimonials() {
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="bg-white p-8 rounded-xl shadow-lg text-center">
               <div className="flex items-center justify-center mb-6">
-                <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-primary ml-5">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-primary ml-5 flex justify-center items-center">
+                  <i  className="fas fa-user text-4xl"></i>
                 </div>
                 <div>
                   <h4 className="font-bold text-lg">{testimonial.name}</h4>
