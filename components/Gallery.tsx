@@ -2,10 +2,10 @@ import Image from 'next/image'
 
 export default function Gallery() {
   const images = [
-    { src: '/1.jfif', alt: 'مراتب' },
-    { src: '/2.jfif', alt: 'مراتب' },
-    { src: '/3.jfif', alt: 'مراتب' },
-    { src: '/4.jfif', alt: 'مراتب' }
+    { src: '/1.webp', alt: 'مراتب' },
+    { src: '/2.webp', alt: 'مراتب' },
+    { src: '/3.webp', alt: 'مراتب' },
+    { src: '/4.webp', alt: 'مراتب' }
   ]
 
   return (
