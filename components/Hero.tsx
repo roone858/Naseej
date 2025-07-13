@@ -1,3 +1,5 @@
+import Header from "./Header";
+
 export default function Hero() {
   return (
     <section
@@ -7,6 +9,7 @@ export default function Hero() {
         backgroundImage: `url('https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
       }}
     >
+      <Header/>
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fadeInUp">
           متجر الرياض للمراتب والمفروشات الفاخرة

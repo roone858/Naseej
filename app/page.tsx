@@ -10,7 +10,7 @@ import Footer from '@/components/Footer'
 export default function Home() {
   return (
     <main className="font-sans text-dark bg-light">
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <About />
       <Products />
