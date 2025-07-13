@@ -26,7 +26,7 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: 'fas fa-map-marker-alt',
-      text: 'الرياض، حي السليمانية، شارع الملك فهد'
+      text: 'الرياض، الريان. شارع الزموري'
     },
     {
       icon: 'fas fa-phone',
